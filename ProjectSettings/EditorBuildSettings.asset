@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GPSTest.unity
+    guid: 797e8e41dd24b5d4db9d281c426c7d04
   m_configObjects: {}
