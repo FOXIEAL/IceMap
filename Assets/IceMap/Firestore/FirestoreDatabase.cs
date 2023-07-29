@@ -19,7 +19,7 @@ namespace IceMap.Firestore
             _reader = new FirestoreReader(db);
         }
 
-        public async void Write(string document, Dictionary<string, object> data)
+        protected async void Write(string document, Dictionary<string, object> data)
         {
             if (IsNullOrEmptyLocalVar())
                 return;
@@ -27,7 +27,7 @@ namespace IceMap.Firestore
             await _writer.WriteAsync(document, data);
         }
 
-        public async void Write(Dictionary<string, object> data)
+        protected async void Write(Dictionary<string, object> data)
         {
             if (IsNullOrEmptyLocalVar())
                 return;
@@ -35,7 +35,7 @@ namespace IceMap.Firestore
             await _writer.WriteAsync(CollectionName, data);
         }
 
-        public async Task<Dictionary<string, object>> Read(string document)
+        protected async Task<Dictionary<string, object>> Read(string document)
         {
             if (IsNullOrEmptyLocalVar())
                 return null;
@@ -43,7 +43,7 @@ namespace IceMap.Firestore
             return await _reader.ReadAsync(CollectionName, document);
         }
 
-        public async Task<QuerySnapshot> Read()
+        protected async Task<QuerySnapshot> Read()
         {
             if (IsNullOrEmptyLocalVar())
                 return null;
