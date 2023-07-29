@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Firebase;
 using Firebase.Firestore;
 using UnityEngine;
 
@@ -11,15 +10,13 @@ namespace IceMap.Firestore
         protected string CollectionName;
         protected string DocumentName;
         
-        private readonly FirebaseFirestore _db;
         private readonly FirestoreWriter _writer;
         private readonly FirestoreReader _reader;
         
-        protected FirestoreDatabase()
+        protected FirestoreDatabase(FirebaseFirestore db)
         {
-            _db = FirebaseFirestore.DefaultInstance;
-            _writer = new FirestoreWriter(_db);
-            _reader = new FirestoreReader(_db);
+            _writer = new FirestoreWriter(db);
+            _reader = new FirestoreReader(db);
         }
 
         public async void Write(string document, Dictionary<string, object> data)
