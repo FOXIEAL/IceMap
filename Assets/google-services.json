@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529179089194",
+    "project_id": "icemap-fde81",
+    "storage_bucket": "icemap-fde81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529179089194:android:4168b32c0f06fb40006653",
+        "android_client_info": {
+          "package_name": "com.Foxieal.IceMap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529179089194-pl4vm095fb287osks05v6dn18d1m1foa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuc5EWF5B7EYd-O29IoHFupdB9kIQ_YnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529179089194-pl4vm095fb287osks05v6dn18d1m1foa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
