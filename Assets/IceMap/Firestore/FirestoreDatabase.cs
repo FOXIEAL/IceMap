@@ -43,10 +43,10 @@ namespace IceMap.Firestore
             if (IsNullOrEmptyLocalVar())
                 return null;
             
-            return await _reader.ReadAsync(document);
+            return await _reader.ReadAsync(CollectionName, document);
         }
 
-        public async Task<Dictionary<string, object>> Read()
+        public async Task<QuerySnapshot> Read()
         {
             if (IsNullOrEmptyLocalVar())
                 return null;

@@ -35,17 +35,13 @@ namespace IceMap.Firestore
         /// Firestore から table のデータを取得する
         /// </summary>
         /// <param name="collection">RDB でいう table</param>
-        /// <returns>Dict 型の検索結果</returns>
-        public async Task<Dictionary<string, object>> ReadAsync(string collection)
+        /// <returns>複数の検索結果</returns>
+        public async Task<QuerySnapshot> ReadAsync(string collection)
         {
-            var docRef = _db.Collection(collection).Document();
+            var docRef = _db.Collection(collection);
             var snapshot = await docRef.GetSnapshotAsync();
 
-            if (!snapshot.Exists) 
-                return default;
-            
-            var data = snapshot.ToDictionary();
-            return data;
+            return snapshot;
         }
     }
 }
