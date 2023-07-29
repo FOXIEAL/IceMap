@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">529179089194</string>
+  <string name="google_storage_bucket" translatable="false">icemap-fde81.appspot.com</string>
+  <string name="project_id" translatable="false">icemap-fde81</string>
+  <string name="google_api_key" translatable="false">AIzaSyAuc5EWF5B7EYd-O29IoHFupdB9kIQ_YnM</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAuc5EWF5B7EYd-O29IoHFupdB9kIQ_YnM</string>
+  <string name="google_app_id" translatable="false">1:529179089194:android:4168b32c0f06fb40006653</string>
+  <string name="default_web_client_id" translatable="false">529179089194-pl4vm095fb287osks05v6dn18d1m1foa.apps.googleusercontent.com</string>
+</resources>
