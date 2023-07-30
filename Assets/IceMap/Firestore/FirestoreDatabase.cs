@@ -8,7 +8,6 @@ namespace IceMap.Firestore
     public abstract class FirestoreDatabase
     {
         protected string CollectionName;
-        protected string DocumentName;
         
         private readonly FirestoreWriter _writer;
         private readonly FirestoreReader _reader;
@@ -53,19 +52,11 @@ namespace IceMap.Firestore
 
         private bool IsNullOrEmptyLocalVar()
         {
-            if (string.IsNullOrEmpty(CollectionName))
-            {
-                Debug.LogError("CollectionName is null or empty");
-                return true;
-            }
+            if (!string.IsNullOrEmpty(CollectionName))
+                return false;
             
-            if (string.IsNullOrEmpty(DocumentName))
-            {
-                Debug.LogError("DocumentName is null or empty");
-                return true;
-            }
-            
-            return false;
+            Debug.LogError("CollectionName is null or empty");
+            return true;
         }
     }
 }

@@ -15,7 +15,6 @@ namespace IceMap.Firestore.Database
         public SpotPosts(FirebaseFirestore db) : base(db)
         {
             CollectionName = "posts";
-            DocumentName = "none";
         }
         
         /// <summary>
