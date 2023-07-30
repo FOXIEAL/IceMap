@@ -1,7 +1,5 @@
-﻿using System;
-using Firebase;
+﻿using Firebase;
 using Firebase.Firestore;
-using IceMap.Firestore.Database;
 using UnityEngine;
 
 namespace IceMap.Firestore
@@ -24,26 +22,26 @@ namespace IceMap.Firestore
 
         private void Update()
         {
-            // press "s" key to write data
             if (Input.GetKeyDown(KeyCode.S))
             {
-                Manager.SpotPosts.Create("test", 0, 0, "test", "test ctx");
+                Manager.Golds.Plus("test", 100);
             }
             
-            // press "r" key to read data
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                Manager.Golds.Minus("test", 100);
+            }
+            
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Manager.SpotPosts.GetAll().ContinueWith(task => {
+                Manager.Golds.Get("test").ContinueWith(task => {
                     if (task.IsFaulted)
                     {
-                        Debug.LogError("Error: " + task.Exception);
+                        Debug.LogError(task.Exception);
                         return;
                     }
 
-                    foreach (var spot in task.Result)
-                    {
-                        Debug.Log($"{spot.PosX}, {spot.PosZ}, {spot.Title}, {spot.Content}");
-                    }
+                    Debug.Log(task.Result);
                 });
             }
 
