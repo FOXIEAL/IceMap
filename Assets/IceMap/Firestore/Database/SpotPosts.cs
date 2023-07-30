@@ -7,8 +7,8 @@ namespace IceMap.Firestore.Database
     public class SpotPosts : FirestoreDatabase
     {
         private const string UserID = "uid";
-        private const string PosX = "px";
-        private const string PosZ = "pz";
+        private const string Longitude = "longitude";
+        private const string Latitude = "latitude";
         private const string Title = "title";
         private const string Content = "content";
         
@@ -21,16 +21,16 @@ namespace IceMap.Firestore.Database
         /// スポットを追加する
         /// </summary>
         /// <param name="uid">ユーザー ID</param>
-        /// <param name="px">x 座標</param>
-        /// <param name="pz">z 座標</param>
+        /// <param name="longitude">x 座標</param>
+        /// <param name="latitude">z 座標</param>
         /// <param name="title">投稿タイトル</param>
         /// <param name="content">投稿内容</param>
-        public void Create(string uid, float px, float pz, string title, string content)
+        public void Create(string uid, float longitude, float latitude, string title, string content)
         {
             var data = new Dictionary<string, object>{
                 {UserID, uid},
-                {PosX, px},
-                {PosZ, pz},
+                {Longitude, longitude},
+                {Latitude, latitude},
                 {Title, title},
                 {Content, content}
             };
@@ -54,8 +54,8 @@ namespace IceMap.Firestore.Database
                 var data = docSnap.ToDictionary();
                 var post = new SpotData
                 {
-                    PosX = float.Parse(data[PosX].ToString()),
-                    PosZ = float.Parse(data[PosZ].ToString()),
+                    Longitude = float.Parse(data[Longitude].ToString()),
+                    Latitude = float.Parse(data[Latitude].ToString()),
                     Title = data[Title].ToString(),
                     Content = data[Content].ToString()
                 };
@@ -67,8 +67,8 @@ namespace IceMap.Firestore.Database
         
         public class SpotData
         {
-            public float PosX;
-            public float PosZ;
+            public float Longitude;
+            public float Latitude;
             public string Title;
             public string Content;
         }
