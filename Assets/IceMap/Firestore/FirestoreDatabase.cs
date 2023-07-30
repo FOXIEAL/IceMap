@@ -23,7 +23,7 @@ namespace IceMap.Firestore
             if (IsNullOrEmptyLocalVar())
                 return;
             
-            await _writer.WriteAsync(document, data);
+            await _writer.WriteAsync(CollectionName, document, data);
         }
 
         protected async void Write(Dictionary<string, object> data)
