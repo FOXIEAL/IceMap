@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 Assets/Firebase
 
+#Font
+/[Aa]ssets/Font/*
+
