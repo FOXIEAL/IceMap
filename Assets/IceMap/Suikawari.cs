@@ -26,6 +26,10 @@ public class Suikawari : MonoBehaviour
     [SerializeField] private GameObject lose;
     [SerializeField] private GameObject otetuki;
     
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject enemylose;
+    
     void Start()
     {
         tapStartBtn1.onClick.AddListener(TapStart);
@@ -64,7 +68,13 @@ public class Suikawari : MonoBehaviour
         else
         { 
             responseTime = randomTime - elapsedTime;
-            if(responseTime < responseEnemy) win.SetActive(true);
+            if (responseTime < responseEnemy)
+            {
+                win.SetActive(true);
+                enemy.SetActive(false);
+                enemylose.SetActive(true);
+                player.GetComponent<RectTransform>().transform.localPosition = new Vector3(90, 1, 0);
+            }
             else lose.SetActive(false);
         }
 
@@ -88,6 +98,6 @@ public class Suikawari : MonoBehaviour
 
     void DeleteSetune()
     {
-        bikkuri.SetActive(true);
+        bikkuri.SetActive(false);
     }
 }
