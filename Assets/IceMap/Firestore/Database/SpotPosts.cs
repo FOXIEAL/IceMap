@@ -15,7 +15,7 @@ namespace IceMap.Firestore.Database
         public SpotPosts(FirebaseFirestore db) : base(db)
         {
             CollectionName = "posts";
-            DocumentName = "";
+            DocumentName = "none";
         }
         
         /// <summary>
@@ -43,17 +43,17 @@ namespace IceMap.Firestore.Database
         /// 全ての投稿を取得する
         /// </summary>
         /// <returns>Post のリスト</returns>
-        public async Task<List<SpotPost>> GetAll()
+        public async Task<List<SpotData>> GetAll()
         {
             var snapshot = await Read();
-            var result = new List<SpotPost>();
+            var result = new List<SpotData>();
             
             foreach (var docSnap in snapshot.Documents)
             {
                 if (!docSnap.Exists) return result;
                 
                 var data = docSnap.ToDictionary();
-                var post = new SpotPost
+                var post = new SpotData
                 {
                     PosX = float.Parse(data[PosX].ToString()),
                     PosZ = float.Parse(data[PosZ].ToString()),
@@ -66,7 +66,7 @@ namespace IceMap.Firestore.Database
             return result;
         }
         
-        public class SpotPost
+        public class SpotData
         {
             public float PosX;
             public float PosZ;

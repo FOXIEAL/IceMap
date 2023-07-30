@@ -5,7 +5,7 @@ namespace IceMap.Firestore
 {
     public class FirestoreManager
     {
-        public SpotPosts SpotPosts { get; private set; } 
+        public SpotPosts SpotPosts { get; } 
         
         public FirestoreManager(FirebaseFirestore db)
         {
