@@ -70,3 +70,16 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+.idea/*
+
+Assets/Firebase
+Assets/Editor Default Resources/Firebase/*
+Assets/Plugins/**/Firebase/*
+
+#Font
+/[Aa]ssets/Font/*
+
+ProjectSettings/GvhProjectSettings.xml
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
+
